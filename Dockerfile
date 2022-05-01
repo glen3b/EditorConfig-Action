@@ -15,5 +15,7 @@ RUN npm install --no-save . && \
 	ln -s $(npm bin)/eclint /usr/local/bin && \
 	echo "eclint version: $(eclint --version)"
 
+RUN git config --global --add safe.directory /github/workspace
+
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
