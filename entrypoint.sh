@@ -13,6 +13,8 @@
 set -o errexit
 set -o nounset
 
+git config --global --add safe.directory /github/workspace
+
 findInCwdOrParent() {
   _currdir="$PWD"
   if [ -f "$1" ]; then
